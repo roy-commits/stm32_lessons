@@ -27,7 +27,7 @@ set(MX_Include_Dirs
 # 2. 源文件匹配（精简路径：直接基于主目录，去除冗余 ../ 层级）
 # 应用层源文件（业务代码+启动汇编）
 file(GLOB_RECURSE MX_Application_Src
-        "${CMAKE_CURRENT_SOURCE_DIR}/Core/*/*.*"  # Core 下所有子目录的 .c 文件
+        "${CMAKE_CURRENT_SOURCE_DIR}/Core/*.*"  # Core 下所有子目录的 .c 文件
         "${CMAKE_CURRENT_SOURCE_DIR}/startup/*.*" # startup 目录的汇编启动文件
 )
 # 驱动层源文件（CMSIS+标准外设库）
