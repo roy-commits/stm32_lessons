@@ -20,12 +20,12 @@ set(MX_Include_Dirs
 
 # STM32CubeMX generated application sources
 set(MX_Application_Src
-        ${CMAKE_CURRENT_SOURCE_DIR}/../Core/System/src/delay.c
+        ../Core/Src/delay.c
 
         ${CMAKE_CURRENT_SOURCE_DIR}/../Core/User/src/i2c.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/../Core/User/src/main.c
+        ../Core/Src/main.c
 
-        ${CMAKE_CURRENT_SOURCE_DIR}/../startup_stm32f103xb.s
+        ../startup/startup_stm32f103xb.s
 )
 
 # STM32 HAL/LL Drivers

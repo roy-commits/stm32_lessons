@@ -17,17 +17,15 @@ set(MX_Defines_Syms
 )
 
 set(MX_Include_Dirs
-        ${CMAKE_CURRENT_SOURCE_DIR}/Core/Device/inc
-        ${CMAKE_CURRENT_SOURCE_DIR}/Core/User/inc
-        ${CMAKE_CURRENT_SOURCE_DIR}/Core/System/inc
-        ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/inc
-        ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32F10x_StdPeriph_Driver/inc
+        ${CMAKE_CURRENT_SOURCE_DIR}/Core/Inc
+        ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/ST/STM32F1xx/Inc
+        ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32F10x_StdPeriph_Driver/Inc
 )
 
 # 2. 源文件匹配（精简路径：直接基于主目录，去除冗余 ../ 层级）
 # 应用层源文件（业务代码+启动汇编）
 file(GLOB_RECURSE MX_Application_Src
-        "${CMAKE_CURRENT_SOURCE_DIR}/Core/*/*.*"  # Core 下所有子目录的 .c 文件
+        "${CMAKE_CURRENT_SOURCE_DIR}/Core/*.*"  # Core 下所有子目录的 .c 文件
         "${CMAKE_CURRENT_SOURCE_DIR}/startup/*.*" # startup 目录的汇编启动文件
 )
 # 驱动层源文件（CMSIS+标准外设库）
