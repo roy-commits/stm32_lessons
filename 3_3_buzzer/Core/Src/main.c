@@ -10,21 +10,23 @@ int main(void) {
      */
     GPIO_InitTypeDef GPIO_InitStructure;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;        // GPIO模式, 赋值为推挽输出模式
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;               // GPIO引脚, 设为GPIO_Pin_0
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;               // GPIO引脚, 设为GPIO_Pin_0
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;       // GPIO传输速率
 
     GPIO_Init(GPIOB, &GPIO_InitStructure);                  // 初始化GPIO
 
-    while (1) {
-
-        GPIO_ResetBits(GPIOB, GPIO_Pin_12);
+    for (int i = 0; i < 5; i++) {
+        GPIO_ResetBits(GPIOB, GPIO_Pin_11);
         Delay_ms(100);
-        GPIO_SetBits(GPIOB, GPIO_Pin_12);
+        GPIO_SetBits(GPIOB, GPIO_Pin_11);
         Delay_ms(100);
-        GPIO_ResetBits(GPIOB, GPIO_Pin_12);
+        GPIO_ResetBits(GPIOB, GPIO_Pin_11);
         Delay_ms(100);
-        GPIO_SetBits(GPIOB, GPIO_Pin_12);
+        GPIO_SetBits(GPIOB, GPIO_Pin_11);
         Delay_ms(500);
+    }
+
+    while (1) {
 
     }
 }

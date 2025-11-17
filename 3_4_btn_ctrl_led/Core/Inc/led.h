@@ -6,17 +6,12 @@
 
 #include "stm32f10x.h"
 
-typedef struct {
-    GPIO_TypeDef *GPIOx;
-    uint16_t GPIO_Pin;
-} LED_AttrTypeDef;
+void LED_Init(GPIO_TypeDef * gpio_x, uint32_t gpio_pin);
 
-void LED_Init(const LED_AttrTypeDef *Led_Struct);
+void LED_ON(GPIO_TypeDef * gpio_x, uint32_t gpio_pin);
 
-void LED_ON(const LED_AttrTypeDef *Led_Struct);
+void LED_OFF(GPIO_TypeDef * gpio_x, uint32_t gpio_pin);
 
-void LED_OFF(const LED_AttrTypeDef *Led_Struct);
-
-void LED_Turn(const LED_AttrTypeDef *Led_Struct);
+void LED_Turn(GPIO_TypeDef * gpio_x, uint32_t gpio_pin);
 
 #endif //INC_3_4_BTN_CTRL_LED_LED_H
