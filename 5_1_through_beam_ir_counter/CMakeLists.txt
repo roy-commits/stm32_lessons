@@ -92,3 +92,12 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 if ((CMAKE_C_STANDARD EQUAL 90) OR (CMAKE_C_STANDARD EQUAL 99))
     message(ERROR "Generated code requires C11 or higher")
 endif()
+
+# 8. 生成二进制文件和 hex 文件（方便烧写）
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        # 生成 .bin 文件
+        COMMAND ${CMAKE_OBJCOPY} -O binary $<TARGET_FILE:${PROJECT_NAME}> ${PROJECT_NAME}.bin
+        # 生成 .hex 文件
+        COMMAND ${CMAKE_OBJCOPY} -O ihex $<TARGET_FILE:${PROJECT_NAME}> ${PROJECT_NAME}.hex
+        COMMENT "Generated binary and hex files: ${PROJECT_NAME}.bin, ${PROJECT_NAME}.hex"
+)

@@ -13,10 +13,8 @@
  *       - scl_pin:  SCL 引脚编号（如 GPIO_Pin_8、GPIO_Pin_10）
  */
 typedef struct {
-    uint32_t GPIO_PORT; // GPIO 引脚端口
+    GPIO_TypeDef *GPIO_PORT; // GPIO 引脚端口
     uint16_t GPIO_PIN; // GPIO 引脚编号
-    uint16_t EXIT_PIN; // 外部EXIT引脚编号
-    uint32_t AFIO_PORT; // AFIO 引脚端口
     uint8_t GPIO_PortSource;
     uint8_t GPIO_PinSource;
     uint32_t EXTI_Line; // EXTI line
