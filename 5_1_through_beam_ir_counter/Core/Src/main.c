@@ -3,7 +3,8 @@
 #include "stm32f10x.h"
 
 int main(void) {
-    Infrared_ConfigTypeDef Infrared_Config = {
+
+    const Infrared_ConfigTypeDef Infrared_Config = {
         GPIOB,
         GPIO_Pin_14,
         GPIO_PortSourceGPIOB,
@@ -11,7 +12,7 @@ int main(void) {
         EXTI_Line14
     };
 
-    OLED_I2C_ConfigTypeDef OLED_Config = {
+    const OLED_I2C_ConfigTypeDef OLED_Config = {
         GPIOB,
         GPIO_Pin_8,
         GPIOB,
