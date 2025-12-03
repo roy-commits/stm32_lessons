@@ -22,6 +22,12 @@ int main(void) {
 
     Infrared_Init(&Infrared_Config);
 
+    /*
+     * 显示静态字符串
+     */
+    OLED_ShowString(1, 1, "Count:");
+
     while (1) {
+        OLED_ShowNum(1, 7, Infrared_Read(), 5);
     }
 }
