@@ -36,10 +36,10 @@ uint8_t Button_GetNum(void) {
 
     if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8) == 0) {
         // 获取PB1输入寄存器的值，若为0则表示按键1被按下
-        Delay_ms(20); // 延时消抖
+        Delay_ms(10); // 延时消抖
         while (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8) == 0) {
         } // 等待按钮释放
-        Delay_ms(20); // 延时消抖
+        Delay_ms(10); // 延时消抖
         Button_Number = 1; // 取键位值为1
 
 
@@ -50,10 +50,10 @@ uint8_t Button_GetNum(void) {
 
     if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_10) == 0) {
         // 获取PB11输入寄存器的值，若为0则表示按键2被按下
-        Delay_ms(20);
+        Delay_ms(10);
         while (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_10) == 0) {
         }
-        Delay_ms(20);
+        Delay_ms(10);
         Button_Number = 2;
     }
 

@@ -15,11 +15,11 @@ int main(void) {
         Button_Number = Button_GetNum();
 
         if (Button_Number == 1) {
-            LED_Turn(GPIOB, GPIO_Pin_1);
+            LED_Turn(GPIOB, GPIO_Pin_11);
         }
 
         if (Button_Number == 2) {
-            LED_Turn(GPIOB, GPIO_Pin_11);
+            LED_Turn(GPIOB, GPIO_Pin_1);
         }
     }
 }
