@@ -14,10 +14,11 @@ typedef struct {
     uint8_t GPIO_PortSource;
     uint32_t GPIO_PinSource[2];
     uint32_t EXTI_Line[2];
+    uint32_t NVIC_PriorityGroup;
 } Encoder_ConfigTypeDef;
 
-void encoder_init(Encoder_ConfigTypeDef *encoder_config);
+void Encoder_Init(Encoder_ConfigTypeDef *encoder_config);
 
-int16_t encoder_read(void);
+int16_t Encoder_Read(void);
 
 #endif //INC_5_2_ENCODER_H
